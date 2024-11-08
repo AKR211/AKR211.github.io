@@ -1,4 +1,4 @@
-
+// Typing Animation for Tagline
 const textArray = [
     "a NISERite.",
     "an Integrated MSc. Student.",
@@ -8,9 +8,9 @@ const textArray = [
 ];
 let textIndex = 0;
 let charIndex = 0;
-let typingSpeed = 100;   // Typing speed in ms
-let erasingSpeed = 50;   // Erasing speed in ms
-let delayBetweenTexts = 1000; // Delay before typing next text in ms
+let typingSpeed = 100;
+let erasingSpeed = 50;
+let delayBetweenTexts = 1000;
 const animatedTextElement = document.getElementById("animated-text");
 
 function type() {
@@ -34,10 +34,11 @@ function erase() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", function() { // Start the animation after the DOM loads
+document.addEventListener("DOMContentLoaded", () => {
     if (textArray.length) setTimeout(type, delayBetweenTexts);
 });
 
+// Show Details Button Functionality
 function showDetails(id) {
     const detailsElement = document.getElementById(id);
     if (detailsElement.style.display === "none" || !detailsElement.style.display) {
@@ -47,33 +48,25 @@ function showDetails(id) {
     }
 }
 
-// Add event listeners to all "Show Details" buttons
 document.querySelectorAll('.show-details-btn').forEach(button => {
     button.addEventListener('click', () => showDetails(button.dataset.target));
 });
 
-// Select the header and footer content elements
+// Footer Visibility Based on Header Position
 const header = document.querySelector('header');
 const footerContent = document.querySelector('.footer-content');
 
-// Create an Intersection Observer to monitor the header's visibility
 const observer = new IntersectionObserver(
     (entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Header is on screen, hide the footer content with animation
                 footerContent.classList.remove('show');
             } else {
-                // Header is off screen, show the footer content with animation
                 footerContent.classList.add('show');
             }
         });
     },
-    { threshold: 0 } // Trigger when any part of the header is visible
+    { threshold: 0 }
 );
 
-// Observe the header
 observer.observe(header);
-
-
-

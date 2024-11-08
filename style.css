@@ -38,6 +38,18 @@ header nav ul li a:hover {
     color: #ff6347; /* Optional: Hover color */
 }
 
+@media (max-width: 768px) {
+    /* Reduce font size and gap for horizontal alignment */
+    header nav ul, footer nav ul {
+        gap: 20px; /* Smaller gap for tighter alignment */
+    }
+
+    header nav ul li a, footer nav ul li a {
+        font-size: 18px; /* Smaller font for better fit */
+        padding: 5px; /* Adjust padding to keep links compact */
+    }
+}
+
 
 section {
     padding: 20px;
@@ -123,6 +135,13 @@ section h1 {
     color: #fff; /* Customize this color as needed */
 }
 
+@media (max-width: 768px) {
+    #hero {
+        display: none;
+    }
+}
+
+
 /* Reset any potential margin from the header */
 header {
     margin: 0;
@@ -182,6 +201,23 @@ header {
     margin-top: 35px;
 }
 
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column; /* Stack image and details vertically */
+        align-items: center; /* Center-align contents */
+    }
+
+    .about-image {
+        display: flex;
+        justify-content: center;
+        max-width: 200px; /* Adjust size for better fit on mobile */
+    }
+
+    .about-details {
+        text-align: left; /* Center-align details text */
+    }
+}
+
 /* CV Section */
 #cv {
     padding: 40px 20px;
@@ -234,6 +270,18 @@ iframe {
 .project-card nav ul li {
     list-style-type: square;
 }
+
+@media (max-width: 768px) {
+    .project-card nav ul {
+        display: block; /* Stacks items vertically */
+        gap: 10px; /* Adjust gap between items */
+    }
+    
+    .project-card nav ul li {
+        margin-bottom: 10px; /* Space between list items */
+    }
+}
+
 
 .details{
     font-family: "Brush Script MT";
@@ -369,21 +417,29 @@ footer {
 }
 
 .footer-content {
-    display: none; /* Start hidden */
     opacity: 0;
-    transition: opacity 1s ease
+    transition: opacity 0.5s ease;
 }
 
-/* Visible state of footer content with animation */
 .footer-content.show {
     display: flex;
     opacity: 1;
 }
 
+
+/* Footer styles */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    padding: 10px 0;
+}
+
 footer nav ul {
     list-style: none;
     display: flex;
-    gap: 60px; /* Space between each item */
+    gap: 60px;
     margin: 0;
     padding: 0;
 }
@@ -395,8 +451,22 @@ footer nav ul li a {
     transition: color 0.3s;
 }
 
-footer nav ul li a:hover {
-    color: #ff6347; /* Optional: Hover color */
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    footer {
+        padding: 8px 5px;
+    }
+
+    footer nav ul {
+        gap: 25px; /* Smaller gap for tighter alignment */
+        flex-wrap: wrap; /* Allows links to wrap to the next line if necessary */
+        justify-content: center;
+    }
+
+    footer nav ul li a {
+        font-size: 14px; /* Smaller font for better fit */
+        padding: 3px; /* Minimal padding for compactness */
+    }
 }
 
 
