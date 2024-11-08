@@ -324,7 +324,7 @@ footer {
 
 .social-links {
     display: flex;
-    gap: 15px;
+    gap: 10px;
     justify-content: center;
     margin-top: 15px;
 }
