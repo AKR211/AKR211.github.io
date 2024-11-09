@@ -434,32 +434,40 @@ footer {
 
 footer {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    background-color: #000000; /* Optional: Background color for visibility */
-    padding: 15px 0; /* Adjust padding as needed */
-    height: 45px;
-    z-index: 1;	
-}
-
-.footer-content {
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-.footer-content.show {
-    display: flex;
-    opacity: 1;
-}
-
-
-/* Footer styles */
-footer {
-    display: flex;
     justify-content: center;
     align-items: center;
     background-color: #000000;
-    padding: 10px 0;
+    padding: 15px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    z-index: 1;
+}
+
+/* Centered styles for footer content */
+.footer-last-updated, .footer-content {
+    position: absolute; /* Allows overlap for smooth fading */
+    opacity: 0;
+    transition: opacity 1s ease;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+}
+
+.footer-last-updated {
+    word-spacing: 1px;
+    font-size: 20px;
+}
+
+/* Show "Last updated" message */
+.footer-last-updated.show {
+    opacity: 1;
+}
+
+/* Show original footer content */
+.footer-content.show {
+    opacity: 1;
 }
 
 footer nav ul {
@@ -492,6 +500,11 @@ footer nav ul li a {
     footer nav ul li a {
         font-size: 14px; /* Smaller font for better fit */
         padding: 3px; /* Minimal padding for compactness */
+    }
+
+    .footer-last-updated {
+        word-spacing: 1px;
+        font-size: 14px;
     }
 }
 

@@ -53,20 +53,35 @@ document.querySelectorAll('.show-details-btn').forEach(button => {
 });
 
 // Footer Visibility Based on Header Position
+// Select the header and footer elements
 const header = document.querySelector('header');
 const footerContent = document.querySelector('.footer-content');
+const footerLastUpdated = document.querySelector('.footer-last-updated');
+const footerLinks = footerContent.querySelectorAll('a');
 
+const lastUpdatedDate = new Date(document.lastModified).toLocaleDateString('en-GB');
+footerLastUpdated.textContent = `Last updated on ${lastUpdatedDate}`;
+
+// Create an Intersection Observer to monitor the header's visibility
 const observer = new IntersectionObserver(
     (entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
+                // Header is on screen, show the "Last updated" message and hide original footer content
+                footerLastUpdated.classList.add('show');
                 footerContent.classList.remove('show');
+                footerLinks.forEach(link => link.style.pointerEvents = 'none'); // Disable links
             } else {
+                // Header is off screen, hide the "Last updated" message and show original footer content
+                footerLastUpdated.classList.remove('show');
                 footerContent.classList.add('show');
+                footerLinks.forEach(link => link.style.pointerEvents = 'auto'); // Enable links
             }
         });
     },
-    { threshold: 0 }
+    { threshold: 0 } // Trigger when any part of the header is visible
 );
 
+// Observe the header
 observer.observe(header);
+
