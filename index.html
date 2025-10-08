@@ -48,16 +48,16 @@
                 <li><strong>Present Occupation:</strong> Undergraduate Student</li>
                 <li><strong>Course:</strong> Integrated Master of Science</li>
                 <li><strong>Major:</strong> Physics</li>
-                <li><strong>Year:</strong> 4<sup>th</sup></li>
+                <li><strong>Year:</strong> 5<sup>th</sup></li>
                 <li><strong>Institute:</strong> National Institute of Science Education and Research, Bhubaneswar, India.</li>
                 <li><strong>Research Interests:</strong> Molecular simulations, Machine Learning, Biological systems, Active matter, Non-reciprocal interactions</li>
                 <li><strong>Languages:</strong> English, Malayalam, Hindi</li>
-                <li><strong>Hobbies:</strong> Keyboard, Coding, Table Tennis, Chess, Cryptography</li>
+                <li><strong>Hobbies:</strong> Keyboard, Coding, Table Tennis, Cryptography</li>
             </ul>
         </div>
     </div>
     <div class="about-description">
-        <p>Hello There. My name is Agney and I am a 4<sup>th</sup> year Int. MSc. Student @ NISER Bhubaneswar. I'm majoring in Physics (and minoring in Computer Science) with a particular inquisitiveness for 
+        <p>Hello There. My name is Agney and I am a 5<sup>th</sup> year Int. MSc. Student @ NISER Bhubaneswar. I'm majoring in Physics (and minoring in Computer Science) with a particular inquisitiveness for 
            Statistical Mechanics, Soft Condensed Matter Physics and Biological Physics. My specific curiosity is in the physics of living matter which lies at the 
            intersection of Physics, Biology and Computational Science. I am interested in understanding complex biological relations and systems such as bird flocks, 
            bacterial colonies, proteins in media etc., creating interaction-based physics models for the same and using computer simulations (aided by machine learning 
@@ -76,10 +76,25 @@
 <section id="cv">
     <h2>My CV</h2>
     <div class="cv-content">
-        <p>Please find my CV updated as of 12/10/2024 below</p>
+        <p>Please find my CV updated as of 9/10/2025 below</p>
     </div>
     <div class="cv-container">
-        <iframe src="docs/CV.pdf" width="100%" height="600px"></iframe>
+        <!-- Show embedded CV only if not Firefox -->
+        <script>
+            function isFirefox() {
+                return navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+            }
+            window.addEventListener('DOMContentLoaded', function() {
+                var cvContainer = document.querySelector('.cv-container');
+                if (!isFirefox()) {
+                    var iframe = document.createElement('iframe');
+                    iframe.src = "docs/CV.pdf";
+                    iframe.width = "100%";
+                    iframe.height = "600px";
+                    cvContainer.insertBefore(iframe, cvContainer.firstChild);
+                }
+            });
+        </script>
         <p><a href="docs/CV.pdf" download>Download CV</a></p>
     </div>
 </section>
@@ -96,10 +111,19 @@
                      <li><strong>Guide: </strong><a href="https://www.niser.ac.in/profile/anil">Dr. A. V. Anil Kumar</a></li>
                  </ul>
             </nav>
-            <p>Explored the <b>phase transition</b> and <b>critical temperature</b> of the <b>2 dimensional Ising Model</b> for Ferromagnetism using extensive <b>Monte Carlo simulations</b>.
-               Attempted to study changes in critical behaviour with the introduction of <b>non-reciprocal interactions</b>.</p>
             <button onclick="showDetails('details1')">Show Details</button>
-            <p id="details1" class="details" style="display:none;">W.I.P</p>
+            <p id="details1" class="details" style="display: none;">We conducted a study of the two-dimensional Ising model implemented
+using the Metropolis Algorithm to observe parameters such as Energy, Net
+Magnetization, Specific Heat Capacity, Magnetic Susceptibility etc. and
+determined the existence of a phase transition in the model. Using Finite size
+scaling and the Binder Cumulant, we determined the Critical Temperature
+of the phase transition which was in agreement with the analytical value.
+We further briefly analyzed the 2D model under an external magnetic field
+and the three-dimensional Ising Model to find an increase in the Critical
+Temperature. Using results from above we attempted to incorporate non
+reciprocal interactions to observe an increase in Critical temperature which
+reduces with reciprocity, and applied a random field to the model and
+obtained an invariance in critical properties with the distribution</p>
         </div>
 
         <div class="project-card">
@@ -110,10 +134,14 @@
                      <li><strong>Location: </strong><a href="https://niser.ac.in">NISER, Bhubaneswar</a></li>
                  </ul>
             </nav>
-            <p>Explored the concept of <b>Physics Informed Neural Networks(PINNs)</b> as a data-driven approach to solving complex physics equations. 
-               Built PINNs from scratch to solve multiple <b>Ordinary Differential Equations</b> using the <b>PyTorch</b> library of Python. </p>
             <button onclick="showDetails('details2')">Show Details</button>
-            <p id="details2" class="details" style="display:none;">W.I.P</p>
+            <p id="details2" class="details" style="display:none;">The project was undertaken with the following broad
+aims<br>
+• Understand the principles of Physics Informed Neural Networks (PINNs) and their distinctness from
+standard Neural Networks<br>
+• Understand the application of PINNs as Differential Equation Solvers<br>
+• From the previous aims, recognize and determine the usefulness of PINNs in solving physical phenomena and their merits and demerits compared
+to other methods</p>
         </div>
 
         <div class="project-card">
@@ -126,10 +154,22 @@
                      <li><strong>Collaborators: </strong><a href="https://github.com/JOEL-JOSEPH-KB">Joel Joseph K. B.</a></li>
                  </ul>
             </nav>
-            <p>Developed and analyzed <b>machine learning models</b> for the task of predicting the <b>oligomerization state(Monomer, Dimer, Oligomer etc.)</b> of a protein from its 
-               primary <b>amino acid sequence</b>. Architectures of the models ranged from CPU-based methods such as <b>k-Nearest Neighbour algorithm</b> to <b>Natural Language Processors(Transformer, Mamba etc.)</b>.</p>
             <button onclick="showDetails('details3')">Show Details</button>
-            <p id="details3" class="details" style="display:none;">W.I.P</p>
+            <p id="details3" class="details" style="display:none;">The oligomerization state of protein sequences is crucial for understanding their
+function and stability, impacting proteomics research and drug development. This
+study proposes a machine learning approach to predict the oligomerization states
+of protein sequences from their amino acid sequences. A large dataset from the
+RCSB Protein Data Bank was cleaned and balanced for training. We implemented
+and fine-tuned various machine learning models, such as k-Nearest Neighbors
+(kNN), Multilayer Perceptron (MLP), Recurrent Neural Network (RNN), Long
+Short-Term Memory (LSTM), Transformers (Tfmr), and Mamba, to predict eight
+oligomerization states.The kNN model consistently outperformed others, reaching an accuracy of up to 68.80% on the original dataset. Among deep learning
+models, LSTM performed best. Although promising, deep learning models need
+improvement in generalization. Future work will focus on hyperparameter tuning,
+alternative feature spaces, and evaluating additional metrics to enhance model
+performance and generalization. This study is the first to apply deep learning
+methods to this specific problem, paving the way for future research in predicting
+protein oligomerization states.</p>
         </div>
 
         <div class="project-card">
@@ -142,12 +182,36 @@
                      <li><strong>Collaborators: </strong><a href="https://github.com/Pallab-Dutta">Pallab Dutta</a></li>
                  </ul>
             </nav>
-            <p>Attempted to create a GPU-based machine learning algorithm for the prediction of the <b>Cauchy Stress Tensor</b> of a <b>molecular system(such as a protein in a solvent)</b> as an alternative 
-               to computationaly expensive <b>molecular dynamics</b> equations. Majority of the efforts were focused on using <b>Graph Neural Networks</b> to predict the atomic stress tensor of a water box as 
-               a precursor.</p>
             <button onclick="showDetails('details4')">Show Details</button>
-            <p id="details4" class="details" style="display:none;">W.I.P</p>
+            <p id="details4" class="details" style="display:none;">This study describes the development and analysis of models for computing
+the stress tensor in a water box simulation. The stress tensor computation is
+inherently difficult, with a time complexity of O(n<sup>4</sup>), where n is the number
+of atoms. Our dataset includes 5001 instances, with each frame of simulation
+comprising of 4275 atoms and each having 8 input and 6 output features.
+We use MultiLayer Perceptrons (MLP) and Graph Neural Networks (GNN)
+to model the stress tensor based on atomic positions, velocities, and one-hot
+atom type encodings. Despite its ability to recognise non-linear patterns,
+the MLP overfits and does not generalise well to the test set. In contrast,
+GNN models, which are intended to capture local atomic interactions via
+message passing, perform better with more balanced training and test results.
+Our findings show that GNNs are an interesting approach to stress tensor
+computing in molecular dynamics simulations, although more enhancements
+are required to attain optimal performance metrics.</p>
         </div>
+
+        <div class="project-card">
+            <h2>MSc. Thesis:<i> Effects of non-reciprocal interactions in synchronization of oscillating ecological metapopulations</i></h2>
+            <nav>
+                 <ul>
+                     <li><strong>Date: </strong>1/6/2025 - ongoing</li>
+                     <li><strong>Location: </strong><a href="https://niser.ac.in">NISER, Bhubaneswar</a></li>
+                     <li><strong>Guide: </strong><a href="https://www.niser.ac.in/profile/anil">Dr. A. V. Anil Kumar</a></li>
+                 </ul>
+            </nav>
+            <button onclick="showDetails('details5')">Show Details</button>
+            <p id="details5" class="details" style="display:none;">W.I.P.</p>
+        </div>
+
     </section>
 
 <section id="contact">
