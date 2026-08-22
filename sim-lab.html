@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sim Lab | Agney K Rajeev</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body class="sim-lab-theme">
+<canvas id="gol-bg"></canvas>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html#about">About Me</a></li>
+                <li><a href="index.html#cv">My CV</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="sim-lab.html">Sim Lab</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<section id="sim-hero">
+    <div class="sim-hero-content">
+        <h0>Welcome to the</h0>
+        <h1 id="glitch-title">Sim Lab</h1>
+        <p>"Complex behavior can emerge from simple rules."</p>
+        <div class="gol-controls">
+            <button id="gol-random">Randomize</button>
+            <button id="gol-clear">Clear</button>
+        </div>
+    </div>
+    <div class="scroll-indicator">
+        <p>Scroll to explore</p>
+        <i class="fas fa-chevron-down"></i>
+    </div>
+</section>
+
+    <div class="sim-spacer"></div>
+
+    <div class="sim-lab-intro-wrapper">
+        <section id="lab-intro">
+            <div class="intro-container">
+                <p>
+                    A <em>simulation</em> is an imitation of reality, built to mirror the physical world. But as we distill nature into pure mathematics and code, we create <em>simulacra</em>: standalone realities governed entirely by their own internal logic. These <em>digital environments</em> allow us to strip away the disturbances and limitations of the universe and we construct perfect lattices, manipulate fundamental forces, and define the absolute laws of <em>massive multi-agent systems</em>. Yet, the true beauty of these <em>in silico</em> experiments lies not in the control we exert, but in what happens when we let time run forward. By furnishing a system with nothing more than simple and logical local rules, we step back to observe the profound nature of <em>emergent phenomena</em> where chaotic agents organize themselves, and staggering <em>complexity</em> breathes life into these virtual worlds.
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <div class="sim-spacer"></div>
+
+    <section id="animations">
+        <h1>Animations</h1>
+        <p class="section-desc">Simple demonstrations of various phenomena through computer simulations, bridging the abstract theory and mathematical equations with observable everyday experiences. From the simple motion of a bouncing ball to the intricate, chaotic switching of a double-scroll attractor, these simulations offer a glimpse into how mathematical rules dictate the logical as well as bizarre behaviors we encounter.</p>
+        <div class="anim-grid">
+
+            <div class="anim-card">
+                <video class="anim-video-bounce" controls autoplay loop muted playsinline preload="auto" src="imgs/anims/bounce.mp4"></video>
+                <div class="anim-info">
+                    <p>Inelastic bouncing of a ball in a closed box under gravity. Eventually, the ball comes to rest at the bottom of the box.</p>
+                </div>
+            </div>
+
+            <div class="anim-card">
+                <video controls autoplay loop muted playsinline preload="auto" src="imgs/anims/coupled_pendulum.mp4"></video>
+                <div class="anim-info">
+                    <p>Motion of two pendulums coupled by a spring. The spring facilitates the transfer of energy between the pendulums. When the amplitude of one pendulum increases, the spring compresses and transfers energy to the other pendulum.</p>
+                </div>
+            </div>
+
+            <div class="anim-card">
+                <video controls autoplay loop muted playsinline preload="auto" src="imgs/anims/double_pendulum.mp4"></video>
+                <div class="anim-info">
+                    <p>Motion of two double pendulums. They start from nearly identical initial conditions but their trajectories diverge over time, demonstrating the sensitive dependence on initial conditions characteristic of chaotic systems.</p>
+                </div>
+            </div>
+
+            <div class="anim-card">
+                <video controls autoplay loop muted playsinline preload="auto" src="imgs/anims/fractal.mp4"></video>
+                <div class="anim-info">
+                    <p>Self-similar structure of a fractal pattern. The koch curve has a haussdorf dimension of approximately 1.2619. As you zoom in, the pattern repeats itself at smaller scales.</p>
+                </div>
+            </div>
+
+            <div class="anim-card">
+                <video controls autoplay loop muted playsinline preload="auto" src="imgs/anims/chua.mp4"></video>
+                <div class="anim-info">
+                    <p>Evolution of the double-scroll attractor, a strange attractor observed from a physical electronic chaotic circuit (generally, Chua's circuit).</p>
+                </div>
+            </div>
+
+            <div class="anim-card">
+                <video controls autoplay loop muted playsinline preload="auto" src="imgs/anims/hysteresis.mp4"></video>
+                <div class="anim-info">
+                    <p>Hysteresis is the dependence of a system’s output on both its current input and its past history of inputs. The stable point for the particle evolves differently depending on whether the parameter is increasing or decreasing.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="simulations">
+        <h1>Simulations</h1>
+        <p class="section-desco">"All models are wrong, but some are useful." - George E.P. Box</p>
+        <p class="section-desc">Here we have live interactive environments for exploring complex systems through agent-based models. Play around with the parameters to observe emergent behaviors.</p>
+        <div class="sim-grid">
+
+            <div class="sim-card">
+                <div class="sim-thumbnail thumb-zombie" onclick="openSimModal('sims/Zombie_Apocalypse.html', 'Zombie Apocalypse')">
+                    <video autoplay loop muted playsinline>
+                        <source src="imgs/sim-thumbnails/zombie.mp4" type="video/mp4">
+                    </video>
+                    <div class="sim-play-overlay"><i class="fas fa-play"></i></div>
+                </div>
+                <div class="sim-info">
+                    <h3>Zombie Apocalypse</h3>
+                    <p>An agent-based model simulating the spread of a zombie outbreak through a population, exploring epidemic dynamics and containment strategies.</p>
+                    <button onclick="openSimModal('sims/Zombie_Apocalypse.html', 'Zombie Apocalypse')">Launch Simulation</button>
+                </div>
+            </div>
+
+            <div class="sim-card">
+                <div class="sim-thumbnail thumb-ising" onclick="openSimModal('sims/Ising_Model.html', 'Ising Model')">
+                    <video autoplay loop muted playsinline>
+                        <source src="imgs/sim-thumbnails/ising.mp4" type="video/mp4">
+                    </video>
+                    <div class="sim-play-overlay"><i class="fas fa-play"></i></div>
+                </div>
+                <div class="sim-info">
+                    <h3>Ising Model</h3>
+                    <p>An model simulating the behavior of a magnetic system, exploring phase transitions and critical phenomena.</p>
+                    <button onclick="openSimModal('sims/Ising.html', 'Ising Model', 1500, 750)">Launch Simulation</button>
+                </div>
+            </div>
+
+            <div class="sim-card">
+                <div class="sim-thumbnail thumb-langevin" onclick="openSimModal('sims/Langevin.html', 'Langevin Dynamics')">
+                    <video autoplay loop muted playsinline>
+                        <source src="imgs/sim-thumbnails/langevin.mp4" type="video/mp4">
+                    </video>
+                    <div class="sim-play-overlay"><i class="fas fa-play"></i></div>
+                </div>
+                <div class="sim-info">
+                    <h3>Langevin Dynamics</h3>
+                    <p>A simulation of Langevin dynamics, modeling the motion of particles in a fluid under the influence of friction and random forces.</p>
+                    <button onclick="openSimModal('sims/Langevin.html', 'Langevin Dynamics', 1500, 750)">Launch Simulation</button>
+                </div>
+            </div>
+
+            <div class="sim-card">
+                <div class="sim-thumbnail thumb-idealgas" onclick="openSimModal('sims/idealgas.html', 'Ideal Gas')">
+                    <video autoplay loop muted playsinline>
+                        <source src="imgs/sim-thumbnails/idealgas.mp4" type="video/mp4">
+                    </video>
+                    <div class="sim-play-overlay"><i class="fas fa-play"></i></div>
+                </div>
+                <div class="sim-info">
+                    <h3>Ideal Gas</h3>
+                    <p>A simulation of Ideal Gas behavior, modeling the motion of gas particles in a container.</p>
+                    <button onclick="openSimModal('sims/idealgas.html', 'Ideal Gas', 1500, 750)">Launch Simulation</button>
+                </div>
+            </div>
+
+            <div class="sim-card">
+                <div class="sim-thumbnail thumb-dla" onclick="openSimModal('sims/dla.html', 'Diffusion-Limited Aggregation')">
+                    <video autoplay loop muted playsinline>
+                        <source src="imgs/sim-thumbnails/dla.mp4" type="video/mp4">
+                    </video>
+                    <div class="sim-play-overlay"><i class="fas fa-play"></i></div>
+                </div>
+                <div class="sim-info">
+                    <h3>Diffusion-Limited Aggregation</h3>
+                    <p>A simulation of Diffusion-Limited Aggregation, modeling the growth of fractal structures through the random movement and sticking of particles.</p>
+                    <button onclick="openSimModal('sims/dla.html', 'Diffusion-Limited Aggregation', 1000, 750)">Launch Simulation</button>
+                </div>
+            </div>
+
+            <div class="sim-card">
+                <div class="sim-thumbnail thumb-percolation" onclick="openSimModal('sims/percolation.html', 'Percolation')">
+                    <video autoplay loop muted playsinline>
+                        <source src="imgs/sim-thumbnails/percolation.mp4" type="video/mp4">
+                    </video>
+                    <div class="sim-play-overlay"><i class="fas fa-play"></i></div>
+                </div>
+                <div class="sim-info">
+                    <h3>Bernoulli Percolation</h3>
+                    <p>A simulation of percolation theory, modeling the spread of a fluid through a porous medium.</p>
+                    <button onclick="openSimModal('sims/percolation.html', 'Percolation', 1000, 750)">Launch Simulation</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div id="sim-modal" class="sim-modal">
+        <div class="sim-modal-content">
+            <div class="sim-modal-header">
+                <span id="sim-modal-title"></span>
+                <button class="sim-modal-close" onclick="closeSimModal()" aria-label="Close simulation">&times;</button>
+            </div>
+            <div class="sim-modal-body" id="sim-modal-body">
+                <div class="sim-modal-rotate-hint"><i class="fas fa-mobile-alt"></i> Rotate your device for a larger view</div>
+                <iframe id="sim-modal-frame" src="" title="NetLogo Simulation"></iframe>
+            </div>
+        </div>
+    </div>
+    <section id="paper-recreations">
+        <h1>Paper Recreations</h1>
+        <p class="section-desc">Attempts at independent implementations of published research in complex systems and active matter. Each card links directly to the public repository containing the numerical methods and source code.</p>
+        <div class="paper-grid">
+
+            <div class="paper-card">
+                <div class="paper-info" style="display: flex; flex-direction: column; height: 100%;">
+                    <h3>Physics Informed Neural Networks</h3>
+                    <p class="paper-citation">Original: <a href="https://medium.com/data-science/solving-differential-equations-with-neural-networks-afdcf7b8bcc4" target="_blank">M. Dagrada, "Introduction to Physics-informed Neural Networks," Towards Data Science, 2022</a></p>
+                    <p><br><br>Demonstrates how a neural network can solve a differential equation with very little training data by incorporating the equation directly into the loss function.</p>
+                    <div class="paper-links" style="margin-top: auto;">
+                        <a href="https://github.com/AKR211/PINN" target="_blank" class="social-link github"><i class="fab fa-github"></i> View Repository</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paper-card">
+                <div class="paper-info" style="display: flex; flex-direction: column; height: 100%;">
+                    <h3>Bacterial Growth and Dormancy</h3>
+                    <p class="paper-citation">Original: <a href="https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.6.033072" target="_blank">M. S. Svenningsen, N. Mitarai, "Simple bacterial growth model for the formation of spontaneous and triggered dormant subpopulations," Physical Review Research 6, 033072, 2024</a></p>
+                    <p>Develops a simple bacterial population model showing how growth dynamics and environmental fluctuations can spontaneously produce dormant subpopulations, while external perturbations can also trigger dormancy.</p>
+                    <div class="paper-links" style="margin-top: auto;">
+                        <a href="https://github.com/AKR211/Bacterial_Growth" target="_blank" class="social-link github"><i class="fab fa-github"></i> View Repository</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paper-card">
+                <div class="paper-info" style="display: flex; flex-direction: column; height: 100%;">
+                    <h3>Semi-classical Game of Life</h3>
+                    <p class="paper-citation">Original: <a href="https://pubs.aip.org/aapt/ajp/article/91/7/561/2897367/The-game-of-life-as-a-species-model" target="_blank">D. A. Faux, P. Bassom, "The game of life as a species model," Am. J. Phys., 2023</a></p>
+                    <p><br><br>Extends Conway’s Game of Life into a generalized cellular-automaton model where species are characterized by preferred neighborhood liveness and environmental resilience, allowing qualitative modeling of extinction, recovery, and predator–prey dynamics.</p>
+                    <div class="paper-links" style="margin-top: auto;">
+                        <a href="https://github.com/AKR211/gscgol" target="_blank" class="social-link github"><i class="fab fa-github"></i> View Repository</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paper-card">
+                <div class="paper-info" style="display: flex; flex-direction: column; height: 100%;">
+                    <h3>Non-Reciprocal Dense Particles</h3>
+                    <p class="paper-citation">Original: <a href="https://arxiv.org/abs/2510.04575" target="_blank">J. U. Klamser, L. Berthier, "Directed percolation transition to active turbulence driven by non-reciprocal forces," arXiv preprint, 2025</a></p>
+                    <p><br><br>Dense particle systems with non-reciprocal interactions undergo a directed-percolation transition from an absorbing state to chaotic, turbulence-like dynamics as non-reciprocity increases</p>
+                    <div class="paper-links" style="margin-top: auto;">
+                        <a href="https://github.com/AKR211/Non-Reciprocal_Dense_Particles" target="_blank" class="social-link github"><i class="fab fa-github"></i> View Repository</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paper-card">
+                <div class="paper-info" style="display: flex; flex-direction: column; height: 100%;">
+                    <h3>Self Propelled Particles</h3>
+                    <p class="paper-citation">Original: <a href="https://www.nature.com/articles/s41467-025-67791-5" target="_blank">N. van den Berg, K. Thijssen, T. T. Nguyen et al., "Emergent collective alignment gives competitive advantage to longer cells during range expansion," Nature Communications 17, 1039, 2026</a></p>
+                    <p>Agent-based models to show that longer bacteria outcompete shorter ones during colony expansion through emergent collective alignment and mechanical exclusion at the expanding front</p>
+                    <div class="paper-links" style="margin-top: auto;">
+                        <a href="https://github.com/AKR211/Self_Propelled_Particles" target="_blank" class="social-link github"><i class="fab fa-github"></i> View Repository</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+<footer>
+    <div class="footer-last-updated"></div>
+    <div class="footer-content">
+        <nav>
+            <ul>
+                <li><a href="index.html#about">About Me</a></li>
+                <li><a href="index.html#cv">My CV</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="sim-lab.html">Sim Lab</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
